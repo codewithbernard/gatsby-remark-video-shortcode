@@ -1,0 +1,35 @@
+{
+  "name": "gatsby-remark-video-shortcode",
+  "version": "1.0.0",
+  "description": "Parse video shortcode to video html code",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "babel ./src --out-dir ./dist -s inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agrawalaayushi/netlify-cms-editor-component-pill.git"
+  },
+  "keywords": [
+    "video",
+    "shortcode",
+    "markdown",
+    "shortcode",
+    "gatsby",
+    "custom"
+  ],
+  "author": "parse html",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "lodash": "^4.17.15",
+    "remark-parse": "^7.0.2",
+    "remark-shortcodes": "^0.2.1",
+    "unified": "^8.4.2",
+    "unist-util-visit": "^2.0.1"
+  }
+}
