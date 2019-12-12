@@ -10,10 +10,6 @@ var parse = require("remark-parse");
 
 var shortcodes = require("remark-shortcodes");
 
-var extractString = function extractString(str) {
-  return str.substring(1, str.length - 1);
-};
-
 module.exports = function (_ref, pluginOptions) {
   var markdownAST = _ref.markdownAST;
   visit(markdownAST, "paragraph", function (node) {
@@ -29,15 +25,15 @@ module.exports = function (_ref, pluginOptions) {
         position: false
       }).parse(shortcode.value);
       var x = tree.children[0].attributes;
-      var url = extractString(x.url ? _.escape(x.url) : "");
-      var control = extractString(x.control);
-      var loop = extractString(x.loop);
-      var autoplay = extractString(x.autoplay);
-      var muted = extractString(x.muted);
-      var height = extractString(x.height);
-      var width = extractString(x.width);
-      var poster = extractString(x.poster ? _.escape(x.poster) : "");
-      var html = ("\n      <div style=\"position: relative; margin-left: auto; margin-right: auto;\">\n <video " + (control && "controls=" + control) + " loop=" + loop + "\n " + (autoplay && muted && "autoplay=" + autoplay) + " allowfullscreen=true\n " + (muted && "muted=" + muted) + " height=" + height + " width=" + width + "  poster=" + poster + ">\n         <source src=" + url + " type=\"video/mp4\" />\n         <source src=" + url + " type=\"video/ogg\" />\n         <source src=" + url + " type=\"video/webm\" />\n       </video>\n </div>\n\n    ").trim();
+      var url = x.url ? _.escape(x.url) : "";
+      var control = x.control;
+      var loop = x.loop;
+      var autoplay = x.autoplay;
+      var muted = x.muted;
+      var height = x.height;
+      var width = x.width;
+      var poster = x.poster ? _.escape(x.poster) : "";
+      var html = ("\n      <div style=\"position: relative; margin-left: auto; margin-right: auto;\">\n <video " + (control === "true" ? "controls" : "") + " " + (loop === "true" ? "loop" : "") + "\n " + (autoplay === "true" && muted === "true" ? "autoplay" : "") + " allowfullscreen=true\n " + (muted === "true" ? "muted=true" : "") + " height=" + height + " width=" + width + "  poster=" + poster + ">\n <source src=" + url + " type=\"video/mp4\" />\n <source src=" + url + " type=\"video/ogg\" />\n <source src=" + url + " type=\"video/webm\" />\n       </video>\n </div>\n\n    ").trim();
       node.type = "html";
       node.children = undefined;
       node.value = html;
