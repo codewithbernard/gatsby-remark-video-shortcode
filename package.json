@@ -1,7 +1,7 @@
 {
   "name": "gatsby-remark-video-shortcode",
   "version": "1.0.0",
-  "description": "Parse video shortcode to video html code",
+  "description": "Parse video shortcode to video html code in markdown",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/agrawalaayushi/netlify-cms-editor-component-pill.git"
+    "url": "https://github.com/agrawalaayushi/gatsby-remark-video-shortcode"
   },
   "keywords": [
     "video",
@@ -19,7 +19,7 @@
     "gatsby",
     "custom"
   ],
-  "author": "parse html",
+  "author": "Aayushi Agrawal aayushi.agrawal13@gmail.com",
   "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.7.5",
