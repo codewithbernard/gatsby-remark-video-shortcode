@@ -1,35 +1,39 @@
 {
   "name": "gatsby-remark-video-shortcode",
-  "version": "1.0.0",
-  "description": "Parse video shortcode to video html code in markdown",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "babel ./src --out-dir ./dist -s inline"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/agrawalaayushi/gatsby-remark-video-shortcode"
-  },
-  "keywords": [
-    "video",
-    "shortcode",
-    "markdown",
-    "shortcode",
-    "gatsby",
-    "custom"
-  ],
+  "description": "Processes videos in markdown so they can be used in the production build.",
+  "version": "1.0.1",
   "author": "Aayushi Agrawal aayushi.agrawal13@gmail.com",
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agrawalaayushi/gatsby-remark-video-shortcode/issues"
+  },
   "dependencies": {
-    "@babel/cli": "^7.7.5",
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
-    "@babel/preset-react": "^7.7.4",
     "lodash": "^4.17.15",
     "remark-parse": "^7.0.2",
     "remark-shortcodes": "^0.2.1",
     "unified": "^8.4.2",
     "unist-util-visit": "^2.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "babel-preset-gatsby-package": "^0.1.4"
+  },
+  "homepage": "https://github.com/agrawalaayushi/gatsby-remark-video-shortcode/#readme",
+  "keywords": [
+    "netlify cms video",
+    "video shortcode",
+    "remark",
+    "gatsby video",
+    "custom shortcode"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agrawalaayushi/gatsby-remark-video-shortcode"
+  },
+  "scripts": {
+    "build": "babel src --out-dir . --ignore **/__tests__",
+    "watch": "babel -w src --out-dir . --ignore **/__tests__"
   }
 }
