@@ -1,7 +1,7 @@
 {
   "name": "gatsby-remark-video-shortcode",
   "description": "Processes videos in markdown so they can be used in the production build.",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "author": "Aayushi Agrawal aayushi.agrawal13@gmail.com",
   "bugs": {
     "url": "https://github.com/agrawalaayushi/gatsby-remark-video-shortcode/issues"
