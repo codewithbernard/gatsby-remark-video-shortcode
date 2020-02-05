@@ -30,13 +30,13 @@ module.exports = ({ markdownAST }, pluginOptions) => {
       const poster = x.poster ? _.escape(x.poster) : "";
 
       const html = `
-      <div style=\"position: relative; margin-left: auto; margin-right: auto;\">\n <video ${
+      <div style=\"position: relative; margin-left: auto; margin-right: auto; max-width:${width}\">\n <video ${
         control === "true" ? "controls" : ""
       } ${loop === "true" ? "loop" : ""}\n ${
         autoplay === "true" && muted === "true" ? "autoplay" : ""
       } allowfullscreen=true\n ${
         muted === "true" ? "muted=true" : ""
-      } height=${height} width=${width}  poster=${poster}>\n <source src=${url} type=\"video/mp4\" />\n <source src=${url} type=\"video/ogg\" />\n <source src=${url} type=\"video/webm\" />\n       </video>\n </div>\n
+      } height=${height} poster=${poster} style=\"width:100%;left:0;top:0;\">\n <source src=${url} type=\"video/mp4\" />\n <source src=${url} type=\"video/ogg\" />\n <source src=${url} type=\"video/webm\" />\n       </video>\n </div>\n
     `.trim();
       node.type = "html";
       node.children = undefined;
