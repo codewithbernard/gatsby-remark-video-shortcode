@@ -5,7 +5,7 @@ var parse = require("remark-parse");
 var shortcodes = require("remark-shortcodes");
 
 module.exports = ({ markdownAST }, pluginOptions) => {
-  visit(markdownAST, "paragraph", node => {
+  visit(markdownAST, "paragraph", (node) => {
     let shortcode = node.children[0];
 
     if (shortcode.type === "text" && !!shortcode.value.match(/{{< Video /)) {
@@ -14,12 +14,21 @@ module.exports = ({ markdownAST }, pluginOptions) => {
         // Plugin inserted below, with custom options for start/end blocks.
         .use(shortcodes, {
           startBlock: "{{<",
-          endBlock: ">}}"
+          endBlock: ">}}",
         })
         // Turn off position output for legibility below.
         .data("settings", { position: false })
         .parse(shortcode.value);
       let x = tree.children[0].attributes;
+      console.log("==========");
+      console.log("==========");
+      console.log("==========");
+      console.log("==========");
+      console.log("==========");
+      console.log("==========");
+      console.log("==========");
+      console.log(x);
+      console.log(x.url);
       const url = x.url ? _.escape(x.url) : "";
       const control = x.control;
       const loop = x.loop;
