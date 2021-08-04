@@ -20,16 +20,9 @@ module.exports = ({ markdownAST }, pluginOptions) => {
         .data("settings", { position: false })
         .parse(shortcode.value);
       let x = tree.children[0].attributes;
-      console.log("==========");
-      console.log("==========");
-      console.log("==========");
-      console.log("==========");
-      console.log("==========");
-      console.log("==========");
-      console.log("==========");
-      console.log(x);
-      console.log(x.url);
-      const url = x.url ? _.escape(x.url) : "";
+      const url = /^(?:\/|[a-z]+:\/\/)/.test(x.url)
+        ? _.escape(x.url)
+        : _.escape(`/${_ref.markdownNode.id}/${x.url}`);
       const control = x.control;
       const loop = x.loop;
       const autoplay = x.autoplay;
